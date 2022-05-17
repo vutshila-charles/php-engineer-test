@@ -44,9 +44,9 @@ use FlickerLeap\Square;
         <div class="section">
             <?php
                 // output your diamond here
-                $square = new Diamond();
-                $square->sideLength = 6;
-                echo "<pre>"; $square->draw();echo "</pre>";
+                $diamond = new Diamond();
+                $diamond->sideLength = 6;
+                echo "<pre>"; $diamond->draw();echo "</pre>";
             ?>
         </div>
 
@@ -54,9 +54,9 @@ use FlickerLeap\Square;
         <div class="section">
             <?php
                 // output your working rectangle here
-                $square = new Rectangle();
-                $square->sideLength = 7;
-                $square->draw();
+                $rectangle = new Rectangle();
+                $rectangle->sideLength = 7;
+                $rectangle->draw();
             ?>
         </div>
 
