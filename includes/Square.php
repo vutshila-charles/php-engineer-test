@@ -31,6 +31,7 @@ class Square extends Shape
     {
         echo $this->name;
     }
+    public function test(){}
 
     /**
      * Draws the square.
