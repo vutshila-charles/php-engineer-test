@@ -31,7 +31,7 @@ class Diamond extends Shape
     }
 
     /**
-     * Draws the square.
+     * Draws the Diamond.
      */
     public function draw()
     {
