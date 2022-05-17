@@ -1,0 +1,22 @@
+body{
+    line-height: 1em;
+    background-color: rgb(212 212 212);
+}
+.section{
+    background-color: rgb(255 255 255);
+    padding: 0.5rem;
+    filter: drop-shadow(0 20px 13px rgb(0 0 0 / 0.03)) drop-shadow(0 8px 5px rgb(0 0 0 / 0.08));
+    transition-duration: 700ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.max-width{
+    max-width: 64rem;
+}
+.heading{
+    text-decoration-line: underline;
+    text-align: center;
+}
+.mx-auto {
+    margin-right: auto !important;
+    margin-left: auto !important;
+}

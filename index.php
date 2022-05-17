@@ -7,6 +7,7 @@
 
 require __DIR__ . '/vendor/autoload.php';
 
+use FlickerLeap\Api\Pokemon;
 use FlickerLeap\Diamond;
 use FlickerLeap\Rectangle;
 use FlickerLeap\Square;
@@ -17,27 +18,7 @@ use FlickerLeap\Square;
     <head>
         <title>Flicker Leap - PHP Engineer Test</title>
     </head>
-    <style type="text/css">
-        body{
-            line-height: 1em;
-            background-color: rgb(212 212 212);
-        }
-        .section{
-            background-color: rgb(255 255 255);
-            padding: 0.5rem;
-        }
-        .max-width{
-            max-width: 64rem;
-        }
-        .heading{
-            text-decoration-line: underline;
-            text-align: center;
-        }
-        .mx-auto {
-            margin-right: auto !important;
-            margin-left: auto !important;
-        }
-    </style>
+    <link rel="stylesheet" href="./includes/css/main.css"/>
     <body>
         <div class="max-width mx-auto">
         <h1 class="heading">PHP Engineer Test</h1>
@@ -74,7 +55,7 @@ use FlickerLeap\Square;
             <?php
                 // output your working rectangle here
                 $square = new Rectangle();
-                $square->sideLength = 4;
+                $square->sideLength = 7;
                 $square->draw();
             ?>
         </div>
@@ -82,24 +63,22 @@ use FlickerLeap\Square;
         <h2>Output the result of the API</h2>
         <div class="section">
             <?php
-                $url = "https://pokeapi.co/api/v2/pokemon/mewtwo";
-                $response = \Httpful\Request::get($url)
-                    ->expectsJson()
-                    ->send();
-                    echo '<h2>Abilities</h2>';
-                    foreach($response->body->abilities as $k => $v) {
-                            echo ucfirst($v->ability->name).'<br>';
-                    }
-                    echo '<h2>Types</h2>';
-                    echo $response->body->types[0]->type->name;
-                    echo '<h2>Pictures </h2>';
-                    echo '<img src="'.$response->body->sprites->back_default.'" width="200">';
+                $pokeManApi = new Pokemon();
+                $pokeManApi->getAbilities();
+                $pokeManApi->getPictures();
+                $pokeManApi->getTypes();
+                $pokeManApi->getSpecies();
             ?>
         </div>
 
         <h2>Recommendations</h2>
+        <div class="section">
+            <ul>
+                <li>Would be nice if Ajax response was to be included</li>
+            </ul>
+        </div>
 
-        <p><!-- Let us know how we can improve this test here --></p>
+        
     </div>
 
     </body>
