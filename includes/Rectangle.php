@@ -49,7 +49,7 @@ class Rectangle extends Shape
                     echo $this->padding(4);
                 }
             }
-             $this->newLine();
+            $this->newLine();
         }
     }
 }
